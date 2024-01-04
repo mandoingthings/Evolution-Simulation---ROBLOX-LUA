@@ -1,0 +1,19 @@
+local Organism = script.Parent.Parent.Parent
+local OraganismsFolder = game.Workspace:WaitForChild("OrganismsFolder")
+local StatsFolder = Organism:WaitForChild("Stats")
+local Points = StatsFolder:WaitForChild("Points")
+local Owner = StatsFolder:WaitForChild("Owner")
+local Morality = StatsFolder:WaitForChild("Morality")
+local Genetics = StatsFolder:WaitForChild("Genetics")
+local Health = StatsFolder:WaitForChild("Health")
+local Speed = StatsFolder:WaitForChild("Speed")
+local Hunger = StatsFolder:WaitForChild("Hunger")
+local ClaimButton = Organism:WaitForChild("ClaimButton")
+
+
+ClaimButton.Triggered:Connect(function(player)
+	if script.Parent.Value == false then
+		script.Parent.Value = true
+		Owner.Value = player.Name
+	end
+end)
